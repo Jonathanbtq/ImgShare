@@ -1,0 +1,15 @@
+.srh_ctn{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0 50px 0;
+}
+.srh_ctn p{
+    font: 20px;
+}
+.srh_ctn form{
+    display: flex;
+    flex-wrap: nowrap;
+}

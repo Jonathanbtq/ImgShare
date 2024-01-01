@@ -1,0 +1,13 @@
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: orange;
+    height: 100px;
+    margin: 0;
+}
+nav h1{
+    font-size: 30px;
+    color: white;
+}

@@ -1,0 +1,21 @@
+.ctrbar_btn{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+}
+.ctrbar_wth{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 50%;
+}
+.ctrbar_wth button{
+    border: none;
+    background-color: rgb(245, 245, 245);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}

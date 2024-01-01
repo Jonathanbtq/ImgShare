@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import pexelsClient from "../services/pexelApi"
 
+
 export default function ImgFeed(){
     const [photos, setPhotos] = useState([])
 
