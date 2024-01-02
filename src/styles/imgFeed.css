@@ -4,42 +4,39 @@
     width: 100%;
     align-items: center;
 }
-.imgf_div{
+.imgf_div {
     width: 73vw;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr)); /* Trois colonnes de largeur égale */
-    grid-auto-flow: dense;
-    gap: 16px;
+    column-count: 3; /* Ajustez le nombre de colonnes en fonction de vos besoins */
+    column-gap: 10px; /* Ajoutez une marge entre les colonnes */
 }
-.img_feed_card{
-    /* padding-top: 80%; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* min-height: 100%; */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.img_feed_card h2{
-    font-weight: bold;
-    color: white;
-}
-.img_feed_card p{
-    font-weight: bold;
-    color: white;
-}
-.image-container {
-    inset: 0;
-    height: 100%;
+
+.img_feed_card {
+    display: inline-block;
     width: 100%;
-    z-index: -1;
+    margin-bottom: 10px; /* Ajoutez une marge en bas de chaque carte */
+    position: relative;
 }
-.img_feed_card img{
+
+.overlay_content {
+    position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.226); /* Ajoutez un fond semi-transparent */
+    color: white;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.image-container {
+    overflow: hidden; /* Pour gérer le dépassement éventuel des images */
+}
+
+.img_feed_card img {
     width: 100%;
-    vertical-align: middle;
-    max-width: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block; /* Pour supprimer l'espace blanc sous l'image */
 }
