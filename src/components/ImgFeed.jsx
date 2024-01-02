@@ -8,7 +8,7 @@ export default function ImgFeed(){
     useEffect(() => {
         const query = 'Nature'
 
-        pexelsClient.photos.search({query, per_page: 5})
+        pexelsClient.photos.search({query, per_page: 10})
             .then((response) => {
                 setPhotos(response.photos)
         })
@@ -25,7 +25,9 @@ export default function ImgFeed(){
                         <div className="img_feed_card" key={index}>
                             <h2>{photo.alt}</h2>
                             <p>{photo.photographer}</p>
-                            <img src={photo.src.original} alt="Image from photographer" />
+                            <div className="image-container">
+                                <img src={photo.src.original} alt="Image from photographer" />
+                            </div>
                         </div>
                     ))}
                 </div>

@@ -4,7 +4,7 @@ import SearshBar from './components/SearshBar'
 import CategoryBar from './components/CategoryBar'
 import ImgFeed from './components/ImgFeed'
 
-import './styles/ImgFeed.css'
+import './styles/imgFeed.css'
 import './styles/SearshBar.css'
 import './styles/NavBar.css'
 import './styles/CategoryBar.css'
