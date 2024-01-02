@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
+    position: relative;
 }
 .imgf_div {
     width: 73vw;
@@ -15,6 +16,7 @@
     width: 100%;
     margin-bottom: 10px; /* Ajoutez une marge en bas de chaque carte */
     position: relative;
+    cursor: pointer;
 }
 
 .overlay_content {
@@ -39,4 +41,50 @@
     width: 100%;
     height: auto;
     display: block; /* Pour supprimer l'espace blanc sous l'image */
+}
+
+.imgf_big{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    background-color: rgb(14, 14, 14);
+}
+
+.imgf_big p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    font-size: 50px;
+    margin: 20px 20px 0 0;
+    z-index: 13;
+    cursor: pointer;
+    /* border: 2px solid rgba(255, 255, 255, 0); */
+}
+.imgf_big p:hover{
+    background-color: rgba(255, 255, 255, 0.158);
+    border: 2px solid rgba(255, 255, 255, 0.137);
+}
+
+.imgf_big_hidden{
+    display: none;
+}
+
+.imgf_big img{
+    /* max-height: 90%; */
+    max-width: 90%;
+    padding: 20px 0 20px 0;
+    margin: 0 auto;
 }

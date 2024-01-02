@@ -1,10 +1,22 @@
 import { useEffect, useState } from "react"
 import pexelsClient from "../services/pexelApi"
 
-
 export default function ImgFeed(){
     const [photos, setPhotos] = useState([])
     const [ContentVisible, setContentVisible] = useState(false)
+    const [imageSelected, setSelectedImg] = useState('')
+    const [model, setModel] = useState(false)
+
+    const selectedImg = (imgSrc) => {
+        setSelectedImg(imgSrc);
+        setModel(true);
+    };
+
+    const handleCloseImg = () => {
+        setModel(false);
+        setSelectedImg('');
+    };
+
 
     const handleMouseOver = (event) => {
         const card = event.currentTarget
@@ -26,12 +38,7 @@ export default function ImgFeed(){
 
     useEffect(() => {
         const query = 'Nature'
-
-        // pexelsClient.photos.show({ id: 6319024 })
-        //     .then((photo) => {
-        //         console.log(photo)
-        //     })
-
+        
         pexelsClient.photos.search({query, per_page: 30})
             .then((response) => {
                 setPhotos(response.photos)
@@ -44,6 +51,10 @@ export default function ImgFeed(){
     return(
         <>
             <div className="imgf_wth">
+                <div className={model? 'imgf_big' : 'imgf_big_hidden'} onClick={handleCloseImg}>
+                    <img src={imageSelected} alt={imageSelected} />
+                    <p onClick={handleCloseImg}>X</p>
+                </div>
                 <div className="imgf_div">
                     {photos.map((photo, index) => (
                         <div
@@ -51,6 +62,7 @@ export default function ImgFeed(){
                             key={index}
                             onMouseOver={handleMouseOver}
                             onMouseOut={handleMouseOut}
+                            onClick={() => selectedImg(photo.src.original)}
                         >
                             <div className="overlay_content">
                                 <h2>{photo.alt}</h2>
