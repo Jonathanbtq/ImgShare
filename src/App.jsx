@@ -11,13 +11,19 @@ import './styles/CategoryBar.css'
 import './main.css'
 
 function App() {
+  const [photos, setPhotos] = useState([])
+
+  const updatePhotos = (newPhotos) => {
+    setPhotos(newPhotos)
+    console.log(photos)
+  }
 
   return (
     <>
-      <NavBar />
-      <SearshBar />
+      <NavBar updatePhotos={updatePhotos} />
+      {/* <SearshBar /> */}
       <CategoryBar />
-      <ImgFeed />
+      <ImgFeed  updatePhotos={photos} />
     </>
   )
 }

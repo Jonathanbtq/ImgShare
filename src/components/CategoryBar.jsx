@@ -3,9 +3,9 @@ export default function CategoryBar(){
         <>
             <div className="ctrbar_btn">
                 <div className="ctrbar_wth">
-                    <button>Accueil</button>
-                    <button>Vidéos</button>
-                    <button>Classement</button>
+                    <button><p>Accueil</p></button>
+                    <button><p>Vidéos</p></button>
+                    <button><p>Classement</p></button>
                 </div>
             </div>
         </>

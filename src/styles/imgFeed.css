@@ -63,15 +63,15 @@
     position: absolute;
     top: 0;
     right: 0;
+    margin: 10px 10px 0 0;
     color: white;
     width: 60px;
     height: 60px;
     border-radius: 50px;
     font-size: 50px;
-    margin: 20px 20px 0 0;
     z-index: 13;
     cursor: pointer;
-    /* border: 2px solid rgba(255, 255, 255, 0); */
+    border: 2px solid rgba(255, 255, 255, 0);
 }
 .imgf_big p:hover{
     background-color: rgba(255, 255, 255, 0.158);

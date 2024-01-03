@@ -1,19 +1,47 @@
 .srh_ctn{
     display: flex;
+    top: 0;
+    left: 0;
     flex-direction: column;
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 50px 0 50px 0;
+    padding: 80px 0 50px 0;
 }
 .srh_ctn p{
-    font: 20px;
+    font-size: 30px;
+    margin: 0 0 20px 0;
+    width: 600px;
+    color: white;
+    font-weight: bold;
 }
 .srh_ctn form{
     display: flex;
     flex-wrap: nowrap;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 600px;
 }
-.srh_ctn form{
-    display: flex;
-    flex-wrap: nowrap;
+.srh_ctn form input:nth-child(1){
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+}
+.srh_ctn form input:nth-child(1)::placeholder{
+    font-weight: bold;
+    color: grey;
+}
+.srh_ctn form input:nth-child(2){
+    position: absolute;
+    background-color: none;
+    border: none;
+    right: 0;
+    height: 80%;
+    margin-right: 10px;
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import pexelsClient from "../services/pexelApi"
 
-export default function ImgFeed(){
+export default function ImgFeed({ updatePhotos }){
     const [photos, setPhotos] = useState([])
     const [ContentVisible, setContentVisible] = useState(false)
     const [imageSelected, setSelectedImg] = useState('')
@@ -16,7 +16,6 @@ export default function ImgFeed(){
         setModel(false);
         setSelectedImg('');
     };
-
 
     const handleMouseOver = (event) => {
         const card = event.currentTarget
@@ -56,7 +55,8 @@ export default function ImgFeed(){
                     <p onClick={handleCloseImg}>X</p>
                 </div>
                 <div className="imgf_div">
-                    {photos.map((photo, index) => (
+                {(updatePhotos && Array.isArray(updatePhotos) && updatePhotos.length > 0) ?
+                    updatePhotos.map((photo, index) => (
                         <div
                             className="img_feed_card"
                             key={index}
@@ -65,14 +65,33 @@ export default function ImgFeed(){
                             onClick={() => selectedImg(photo.src.original)}
                         >
                             <div className="overlay_content">
-                                <h2>{photo.alt}</h2>
-                                <p>{photo.photographer}</p>
+                            <h2>{photo.alt}</h2>
+                            <p>{photo.photographer}</p>
                             </div>
                             <div className="image-container">
-                                <img src={photo.src.original} alt="Image from photographer" />
+                            <img src={photo.src.original} alt="Image from photographer" />
                             </div>
                         </div>
-                    ))}
+                        ))
+                        :
+                        photos.map((photo, index) => (
+                        <div
+                            className="img_feed_card"
+                            key={index}
+                            onMouseOver={handleMouseOver}
+                            onMouseOut={handleMouseOut}
+                            onClick={() => selectedImg(photo.src.original)}
+                        >
+                            <div className="overlay_content">
+                            <h2>{photo.alt}</h2>
+                            <p>{photo.photographer}</p>
+                            </div>
+                            <div className="image-container">
+                            <img src={photo.src.original} alt="Image from photographer" />
+                            </div>
+                        </div>
+                        ))
+                    }
                 </div>
             </div>
         </>
