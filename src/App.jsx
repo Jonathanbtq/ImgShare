@@ -22,8 +22,8 @@ function App() {
     <>
       <NavBar updatePhotos={updatePhotos} />
       {/* <SearshBar /> */}
-      <CategoryBar />
-      <ImgFeed  updatePhotos={photos} />
+      <CategoryBar updatePhotos={updatePhotos} />
+      <ImgFeed updatePhotos={photos} />
     </>
   )
 }
