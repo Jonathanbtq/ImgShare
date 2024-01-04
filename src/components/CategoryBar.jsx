@@ -6,8 +6,6 @@ export default function CategoryBar({ updatePhotos }){
         if($category === 'selection') {
             pexelsClient.photos.curated({ per_page: 10 })
                 .then(response => {
-                    console.log('test')
-                    console.log(response.photos)
                     updatePhotos(response.photos)
                 })
                 .catch(error => {
@@ -17,6 +15,12 @@ export default function CategoryBar({ updatePhotos }){
             pexelsClient.videos.popular({ per_page: 50 })
                 .then(responsevideo => {
                     updatePhotos(responsevideo.videos)
+                })
+        } else if ($category === 'aleatoire') {
+            const query = 'random'
+            pexelsClient.photos.search({ query, per_page: 10 })
+                .then((response) => {
+                    updatePhotos(response.photos)
                 })
         }
     }
@@ -31,8 +35,8 @@ export default function CategoryBar({ updatePhotos }){
                     <button onClick={() => selectedImg('video')}>
                         <p>Vidéos</p>
                     </button>
-                    <button>
-                        <p>Classement</p>
+                    <button onClick={() => selectedImg('aleatoire')}>
+                        <p>Aléatoire</p>
                     </button>
                 </div>
             </div>
