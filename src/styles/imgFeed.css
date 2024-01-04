@@ -19,6 +19,11 @@
     cursor: pointer;
 }
 
+.img_ctn_src{
+    width: 100%;
+    height: 100%;
+}
+
 .overlay_content {
     position: absolute;
     top: 0;
