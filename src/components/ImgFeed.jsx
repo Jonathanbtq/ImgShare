@@ -86,7 +86,7 @@ export default function ImgFeed({ updatePhotos }){
                                 >
                                     <div className="image-container">
                                         <video width="100%" height="100%" controls={false} autoPlay muted>
-                                            <source src={photo.video_files[0].link} type="video/mp4" />
+                                            <source className="img_ctn_src" src={photo.video_files[0].link} type="video/mp4" />
                                         </video>
                                     </div>
                                     <div className="overlay_content">
