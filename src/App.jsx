@@ -21,7 +21,6 @@ function App() {
   return (
     <>
       <NavBar updatePhotos={updatePhotos} />
-      {/* <SearshBar /> */}
       <CategoryBar updatePhotos={updatePhotos} />
       <ImgFeed updatePhotos={photos} />
     </>
