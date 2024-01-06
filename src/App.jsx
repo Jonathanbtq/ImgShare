@@ -15,7 +15,6 @@ function App() {
 
   const updatePhotos = (newPhotos) => {
     setPhotos(newPhotos)
-    console.log(photos)
   }
 
   return (

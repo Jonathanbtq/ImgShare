@@ -1,7 +1,7 @@
 import { useState } from "react"
 import pexelsClient from "../services/pexelApi"
 
-export default function SearshBar({ updatePhotos  }){
+export default function SearshBar({ updatePhotos }){
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
