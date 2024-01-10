@@ -1,3 +1,4 @@
+I use Pexel API.
 ![imgshare](https://github.com/Jonathanbtq/ImgShare/assets/99287239/cd8b5c33-cab1-428d-838e-13c5145ef4db)
 
 # React + Vite
